@@ -24,14 +24,14 @@ function Character(): JSX.Element {
   const [totalPages, setTotalPages] = useState(0);
   const [locationsPerPage] = useState(10); 
   const [currentPage, setCurrentPage] = useState(1);
-  const [statusFilter, setStatusFilter] = useState<string>('all'); // Initialize filter state
+  const [statusFilter, setStatusFilter] = useState<string>('all'); 
   const { favorites, addToFavorites, removeFromFavorites } = useFavorites();
 
   const navigate = useNavigate(); 
 
   useEffect(() => {
     fetchData();
-  }, [currentPage, originData, statusFilter]); // Include statusFilter in dependency array
+  }, [currentPage, originData, statusFilter]); 
 
   async function fetchData(): Promise<void> {
     try {

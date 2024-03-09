@@ -34,7 +34,6 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps): JSX.Ele
   const [favorites, setFavorites] = useState<Character[]>([]);
 
   useEffect(() => {
-    // Load favorites from localStorage when component mounts
     const storedFavorites = localStorage.getItem('favorites');
     if (storedFavorites) {
       setFavorites(JSON.parse(storedFavorites));
@@ -42,7 +41,6 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps): JSX.Ele
   }, []);
 
   useEffect(() => {
-    // Save favorites to localStorage when favorites state changes
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
